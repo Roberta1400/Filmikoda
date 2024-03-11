@@ -1,1 +1,1 @@
-# CGI-Suvepraktika_Ylesanne
+# CGI Suvepraktika Ülesanne
