@@ -1,8 +1,11 @@
 package com.example.demo.filmid;
 
+import org.springframework.stereotype.Service;
+
 import java.util.List;
 import java.util.Optional;
 
+@Service
 public class FilmService {
 
     private final FilmRepository filmRepository;
