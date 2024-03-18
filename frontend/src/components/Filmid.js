@@ -1,4 +1,5 @@
 
+import './Filmid.css';
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 
@@ -22,8 +23,8 @@ function Filmid() {
         <div key={film.id} className="film">
           <Link to={`/movies/${film.id}`}>
             <img src={film.pilt} alt="Filmipilt" />
-            <h2>{film.pealkiri}</h2>
           </Link>
+          <h2>{film.pealkiri}</h2>
         </div>
       ))}
     </div>

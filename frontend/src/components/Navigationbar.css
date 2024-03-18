@@ -1,0 +1,32 @@
+.navbar {
+    height: 60px;
+    background-color: #e5dada;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+  }
+  
+  .kinonimi {
+    font-size: 24px;
+    font-weight: bold;
+    color: #840032;
+  }
+  
+  .nav-links {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+  }
+  
+  .nav-links a {
+    margin-left: 20px;
+    font-size: 16px;
+    color: #840032;
+    text-decoration: none;
+  }
+  
+  .nav-links a.active {
+    font-weight: bold;
+    color: #e59500;
+  }
