@@ -7,6 +7,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping(path = "api/v1/kasutaja")
+@CrossOrigin
 public class KasutajaController {
 
     private final KasutajaService kasutajaService;

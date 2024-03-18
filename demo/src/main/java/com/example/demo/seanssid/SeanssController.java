@@ -9,6 +9,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping(path = "api/v1/seansid")
+@CrossOrigin
 public class SeanssController {
     private final SeanssService seanssService;
 

@@ -10,6 +10,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping(path = "api/v1/filmid")
+@CrossOrigin
 public class FilmController {
 
     private final FilmService filmService;

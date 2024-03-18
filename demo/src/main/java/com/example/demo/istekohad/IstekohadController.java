@@ -9,6 +9,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping(path = "api/v1/istekohad")
+@CrossOrigin
 public class IstekohadController {
     private final IstekohadService istekohadService;
 

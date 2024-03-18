@@ -22,22 +22,26 @@ public class Film {
     private int vanusepiirang;
     private String keel;
 
+    private String pilt;
+
     public Film() {
     }
 
-    public Film(Long id, String pealkiri, String žanr, int vanusepiirang, String keel) {
+    public Film(Long id, String pealkiri, String žanr, int vanusepiirang, String keel, String pilt) {
         this.id = id;
         this.pealkiri = pealkiri;
         this.žanr = žanr;
         this.vanusepiirang = vanusepiirang;
         this.keel = keel;
+        this.pilt = pilt;
     }
 
-    public Film(String pealkiri, String žanr, int vanusepiirang, String keel) {
+    public Film(String pealkiri, String žanr, int vanusepiirang, String keel, String pilt) {
         this.pealkiri = pealkiri;
         this.žanr = žanr;
         this.vanusepiirang = vanusepiirang;
         this.keel = keel;
+        this.pilt = pilt;
     }
 
     public Long getId() {
@@ -89,5 +93,13 @@ public class Film {
                 ", vanusepiirang=" + vanusepiirang +
                 ", keel='" + keel + '\'' +
                 '}';
+    }
+
+    public String getPilt() {
+        return pilt;
+    }
+
+    public void setPilt(String pilt) {
+        this.pilt = pilt;
     }
 }
