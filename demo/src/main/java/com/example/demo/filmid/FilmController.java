@@ -21,8 +21,19 @@ public class FilmController {
     }
 
     @GetMapping
-    public List<Film> getFilmid() {
-        return filmService.getFilmid();
+    public List<Film> getFilmid(@RequestParam(required = false) String vanusepiirang,
+                                @RequestParam(required = false) String žanr,
+                                @RequestParam(required = false) String keel)//chatgpt näitas kuidas lisada parameetreid
+   {
+        if (vanusepiirang != null) {
+            return filmService.getFilmidByVanusepiirang(Integer.parseInt(vanusepiirang));
+        } else if (žanr != null) {
+            return filmService.getFilmidByŽanr(žanr);
+        } else if (keel != null) {
+            return filmService.getFilmidByKeel(keel);
+        } else {
+            return filmService.getFilmid();
+        }
     }
 
     @PostMapping

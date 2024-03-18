@@ -17,6 +17,7 @@ public class FilmService {
     public List<Film> getFilmid() {
         return filmRepository.findAll();
     }
+
     public void addNewFilm(Film film) {
         Optional<Film> filmOptional = filmRepository.findFilmById(film.getId());
         if(filmOptional.isPresent()){
@@ -33,4 +34,15 @@ public class FilmService {
         filmRepository.deleteById(id);
     }
 
+    public List<Film> getFilmidByVanusepiirang(int vanusepiirang) {
+        return filmRepository.findByVanusepiirang(vanusepiirang);
+    }
+
+    public List<Film> getFilmidByŽanr(String žanr) {
+        return filmRepository.findByŽanr(žanr);
+    }
+
+    public List<Film> getFilmidByKeel(String keel) {
+        return filmRepository.findByKeel(keel);
+    }
 }
