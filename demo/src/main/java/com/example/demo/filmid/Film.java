@@ -19,7 +19,7 @@ public class Film {
     private Long id;
     private String pealkiri;
     private String žanr;
-    private int vanusepiirang;
+    private String vanusepiirang;
     private String keel;
 
     private String pilt;
@@ -27,7 +27,7 @@ public class Film {
     public Film() {
     }
 
-    public Film(Long id, String pealkiri, String žanr, int vanusepiirang, String keel, String pilt) {
+    public Film(Long id, String pealkiri, String žanr, String vanusepiirang, String keel, String pilt) {
         this.id = id;
         this.pealkiri = pealkiri;
         this.žanr = žanr;
@@ -36,7 +36,7 @@ public class Film {
         this.pilt = pilt;
     }
 
-    public Film(String pealkiri, String žanr, int vanusepiirang, String keel, String pilt) {
+    public Film(String pealkiri, String žanr, String vanusepiirang, String keel, String pilt) {
         this.pealkiri = pealkiri;
         this.žanr = žanr;
         this.vanusepiirang = vanusepiirang;
@@ -68,11 +68,11 @@ public class Film {
         this.žanr = žanr;
     }
 
-    public int getVanusepiirang() {
+    public String getVanusepiirang() {
         return vanusepiirang;
     }
 
-    public void setVanusepiirang(int vanusepiirang) {
+    public void setVanusepiirang(String vanusepiirang) {
         this.vanusepiirang = vanusepiirang;
     }
 

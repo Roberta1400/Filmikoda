@@ -34,15 +34,7 @@ public class FilmService {
         filmRepository.deleteById(id);
     }
 
-    public List<Film> getFilmidByVanusepiirang(int vanusepiirang) {
-        return filmRepository.findByVanusepiirang(vanusepiirang);
-    }
-
-    public List<Film> getFilmidByŽanr(String žanr) {
-        return filmRepository.findByŽanr(žanr);
-    }
-
-    public List<Film> getFilmidByKeel(String keel) {
-        return filmRepository.findByKeel(keel);
+    public List<Film> findByVanusepiirangAndŽanrAndKeel(String vanusepiirang, String žanr, String keel) {
+        return filmRepository.findByVanusepiirangAndŽanrAndKeel(vanusepiirang, žanr, keel);
     }
 }

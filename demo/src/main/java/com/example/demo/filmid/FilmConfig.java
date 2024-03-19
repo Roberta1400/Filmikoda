@@ -18,8 +18,8 @@ public class FilmConfig {
     @Bean
     CommandLineRunner filmCommandLineRunner(FilmRepository repository){
         return args -> {
-            Film lotte = new Film(1L,"Lotte", "animatsioon", 0, "eesti", "");
-            Film interstellar = new Film("Interstellar", "scifi", 14, "inglise","/Users/robertasolom/Desktop/CGI-Suvepraktika_Ylesanne/demo/src/pildid/interstellar.jpeg");
+            Film lotte = new Film(1L,"Lotte", "animatsioon", "0", "eesti", "");
+            Film interstellar = new Film("Interstellar", "scifi", "14", "inglise","/Users/robertasolom/Desktop/CGI-Suvepraktika_Ylesanne/demo/src/pildid/interstellar.jpeg");
             repository.saveAll(List.of(lotte, interstellar));
         };
     }
