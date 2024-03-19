@@ -1,0 +1,16 @@
+.saal-container {
+    text-align: center;
+  }
+  
+  .saal-line {
+    width: 30%;
+    border: none;
+    border-top: 4px solid #002642;
+    margin-top: 2px;
+  }
+  
+  .saal-text {
+    margin-top: 40px;
+    font-weight: 500;
+    font-size: small;
+  }

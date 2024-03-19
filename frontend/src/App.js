@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Routes, Route} from "react-router-dom";
 import Filmid from './components/Filmid';
 import Navigationbar from './components/Navigationbar';
 import Seanssid from './components/Seanssid';
+import Saal from './components/Saal';
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
       <Routes>
         <Route path="" element={<Filmid />} /> 
         <Route path="/seanssid" element={<Seanssid />} />
+        <Route path="/saal/:saalId" element={<Saal />} />
       </Routes>
     </Router>
   </div>

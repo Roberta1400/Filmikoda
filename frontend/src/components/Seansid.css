@@ -22,3 +22,9 @@
   .seanss:hover {
     background-color: rgba(132, 0, 50, 0.6); 
   }
+
+  .seanss-link {
+    text-decoration: none;
+    color: inherit;
+    cursor: pointer; 
+  }
