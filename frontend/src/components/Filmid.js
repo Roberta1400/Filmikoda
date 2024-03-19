@@ -52,11 +52,15 @@ function Filmid() {
         <option value="scifi">SciFi</option>
         <option value="animatsioon">Animatsioon</option>
         <option value="drama">Draama</option>
+        <option value="romcom">Romantiline komöödia</option>
+        <option value="horror">Horror</option>
       </select>
       <select value={selectedFilters.vanusepiirang} onChange={handleVanusepiirangChange}>
         <option value="">All</option>
+        <option value="12">12</option>
         <option value="14">14</option>
-        <option value="16">Inglise keel</option>
+        <option value="16">16</option>
+        <option value="18">18</option>
         <option value="0">Puudub</option>
       </select>
       <select value={selectedFilters.keel} onChange={handleKeelChange}>
