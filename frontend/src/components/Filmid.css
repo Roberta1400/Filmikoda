@@ -1,17 +1,31 @@
-.film-list {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-  }
-  
-  .film {
-    margin: 10px;
-    padding: 10px;
-    border-radius: 10px;
-    max-width: 300px;
-    background-color: rgba(229, 149, 0, 0.6);
-  }
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 
-  .film:hover {
-    background-color: rgba(132, 0, 50, 0.6); /* Change to the desired color and opacity */
-  }
+.filter-container {
+  margin-bottom: 20px; 
+}
+
+.filter-container select {
+  width: 200px; 
+}
+ 
+ .film-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.film {
+  margin: 10px;
+  padding: 10px;
+  border-radius: 10px;
+  max-width: 300px;
+  background-color: rgba(229, 149, 0, 0.6);
+}
+
+.film:hover {
+  background-color: rgba(132, 0, 50, 0.6); 
+}
