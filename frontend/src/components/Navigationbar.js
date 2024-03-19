@@ -2,6 +2,8 @@ import { NavLink } from 'react-router-dom';
 import './Navigationbar.css';
 
 
+
+
 const Navigationbar = () => {
     return (
         <nav className="navbar">
@@ -9,9 +11,9 @@ const Navigationbar = () => {
             <p>Filmikoda</p>
           </div>
           <div className="nav-links">
-            <NavLink exact to="/" activeClassName="active">Kodu</NavLink>
-            <NavLink to="/seanssid" activeClassName="active">Seanssid</NavLink>
-            <NavLink to="/login" activeClassName="active">Logi sisse</NavLink>
+            <NavLink to="/" activeclassname="active">Kodu</NavLink>
+            <NavLink to="/seanssid" activeclassname="active">Seanssid</NavLink>
+            <NavLink to="/login" activeclassname="active">Logi sisse</NavLink>
           </div>
         </nav>
       )
