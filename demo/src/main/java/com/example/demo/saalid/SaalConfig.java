@@ -6,6 +6,7 @@ import com.example.demo.filmid.FilmService;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.core.annotation.Order;
 
 import java.util.List;
 
@@ -18,6 +19,7 @@ public class SaalConfig {
     }
 
     @Bean
+    @Order(3)
     CommandLineRunner saalCommandLineRunner(SaalRepository repository){
         return args -> {
             Saal kosmos = new Saal(1L,"Kosmos");

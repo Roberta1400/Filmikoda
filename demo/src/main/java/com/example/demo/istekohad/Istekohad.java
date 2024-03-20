@@ -7,16 +7,18 @@ import jakarta.persistence.*;
 public class Istekohad {
     @Id
     @SequenceGenerator(
-            name = "saal_sequence",
-            sequenceName = "saal_sequence",
+            name = "istekohad_sequence",
+            sequenceName = "istekohad_sequence",
             allocationSize = 1
     )
     @GeneratedValue(
             strategy = GenerationType.SEQUENCE,
-            generator = "saal_sequence"
+            generator = "istekohad_sequence"
     )
     private Long id;
     private int kohaId;
+
+    private int reaNr;
     private boolean kasVõetud;
 
     @ManyToOne
@@ -26,9 +28,10 @@ public class Istekohad {
     public Istekohad() {
     }
 
-    public Istekohad(Long id, int kohaId, boolean kasVõetud, Saal saal) {
+    public Istekohad(Long id, int kohaId, int reaNr, boolean kasVõetud, Saal saal) {
         this.id = id;
         this.kohaId = kohaId;
+        this.reaNr = reaNr;
         this.kasVõetud = kasVõetud;
         this.saal = saal;
     }
@@ -73,5 +76,13 @@ public class Istekohad {
                 ", kasVõetud=" + kasVõetud +
                 ", saal=" + saal +
                 '}';
+    }
+
+    public int getReaNr() {
+        return reaNr;
+    }
+
+    public void setReaNr(int reaNr) {
+        this.reaNr = reaNr;
     }
 }

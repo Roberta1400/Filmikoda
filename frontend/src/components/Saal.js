@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import './Saal.css';
+import Istekohad from './Istekohad';
 
 function Saal() {
     const [saal, setSaal] = useState(null);
@@ -29,6 +30,7 @@ function Saal() {
           <div className="container">
             <hr className="saal-line" />
           </div>
+          <Istekohad saalId={saalId} />
         </div>
       );
 }

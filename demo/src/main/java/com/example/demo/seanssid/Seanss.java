@@ -36,7 +36,8 @@ public class Seanss {
     public Seanss() {
     }
 
-    public Seanss(LocalDateTime algusaeg, Film film, Saal saal) {
+    public Seanss(Long id, LocalDateTime algusaeg, Film film, Saal saal) {
+        this.id = id;
         this.algusaeg = algusaeg;
         this.film = film;
         this.saal = saal;

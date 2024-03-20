@@ -26,4 +26,8 @@ public class IstekohadService {
         }
         istekohadRepository.save(istekoht);
     }
+
+    public List<Istekohad> getIstekohadBySaalID(Long saalId) {
+        return istekohadRepository.getIstekohadBySaalID(saalId);
+    }
 }

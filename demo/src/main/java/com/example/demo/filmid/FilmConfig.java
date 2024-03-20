@@ -4,6 +4,7 @@ import com.example.demo.filmid.FilmService;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.core.annotation.Order;
 
 import java.util.List;
 
@@ -16,6 +17,7 @@ public class FilmConfig {
     }
 
     @Bean
+    @Order(2)
     CommandLineRunner filmCommandLineRunner(FilmRepository repository){
         return args -> {
             Film lotte = new Film(1L,"Lotte", "animatsioon", "0", "eesti", "");

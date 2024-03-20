@@ -12,4 +12,7 @@ public interface IstekohadRepository extends JpaRepository<Istekohad, Long> {
 
     @Query("SELECT s FROM Istekohad s WHERE s.id = ?1")
     Optional<Istekohad> findIstekohtById(Long id);
+
+    @Query("SELECT s FROM Istekohad s WHERE s.saal.id = ?1")
+    List<Istekohad> getIstekohadBySaalID(Long saalId);
 }
