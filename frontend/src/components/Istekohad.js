@@ -30,13 +30,15 @@ function Istekohad({ saalId }) {
     const groupedIstekohad = groupIstekohadByReaNr();
 
     const handleClick = (valitudIstekoht) => {
-        const updatedIstekohad = istekohad.map(istekoht => {
-            if (istekoht.id === valitudIstekoht.id) {
-                return { ...istekoht, selected: !istekoht.selected };
-            }
-            return istekoht;
-        });
-        setIstekohad(updatedIstekohad);
+        if (!valitudIstekoht.kasVõetud) {
+            const updatedIstekohad = istekohad.map(istekoht => {
+                if (istekoht.id === valitudIstekoht.id) {
+                    return { ...istekoht, selected: !istekoht.selected };
+                }
+                return istekoht;
+            });
+            setIstekohad(updatedIstekohad);
+        }
     };
 
     return (

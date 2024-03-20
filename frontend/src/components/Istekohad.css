@@ -19,6 +19,7 @@
 
 .võetud {
     background-color: #002642;
+    cursor: not-allowed;
 }
 
 .vaba {

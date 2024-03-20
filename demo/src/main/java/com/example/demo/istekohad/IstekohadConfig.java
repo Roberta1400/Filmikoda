@@ -28,7 +28,7 @@ public class IstekohadConfig {
 
             for (int reaNr = 1; reaNr <= 4; reaNr++) {
                 for (int kohaId = 1; kohaId <= 8; kohaId++) {
-                    boolean kasVõetud = false;
+                    boolean kasVõetud = (reaNr == 2 && (kohaId == 2 || kohaId == 6));
                     Istekohad istekoht = new Istekohad(null, kohaId, reaNr, kasVõetud, kosmos);
                     repository.save(istekoht);
                 }
@@ -36,7 +36,7 @@ public class IstekohadConfig {
 
             for (int reaNr = 1; reaNr <= 4; reaNr++) {
                 for (int kohaId = 9; kohaId <= 16; kohaId++) {
-                    boolean kasVõetud = false;
+                    boolean kasVõetud = (reaNr == 3 && (kohaId == 10 || kohaId == 13));
                     Istekohad istekoht = new Istekohad(null, kohaId, reaNr, kasVõetud, imax);
                     repository.save(istekoht);
                 }
