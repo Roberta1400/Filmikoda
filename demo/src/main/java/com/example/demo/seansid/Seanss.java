@@ -1,4 +1,4 @@
-package com.example.demo.seanssid;
+package com.example.demo.seansid;
 
 import com.example.demo.filmid.Film;
 import com.example.demo.saalid.Saal;

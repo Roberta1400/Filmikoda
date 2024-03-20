@@ -28,3 +28,17 @@
 .istekoht:hover {
     background-color: #840032;
 }
+
+.istekohad-container {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.istekohad-rea-container {
+    width: 100%; 
+    display: flex;
+    justify-content: flex-start;
+    justify-content: center;
+}

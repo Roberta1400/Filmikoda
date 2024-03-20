@@ -3,7 +3,7 @@ import './Seansid.css';
 import { format } from "date-fns";
 import { Link } from 'react-router-dom';
 
-function Seanssid() {
+function Seansid() {
   const [seanssid, setSeanssid] = useState([]);
 
   
@@ -21,7 +21,7 @@ function Seanssid() {
   return (
     <div className="container">
       <h1>Seanssid</h1>
-      <div className="seanssid-list">
+      <div className="seansid-list">
         {seanssid.map(seanss => (
           <Link to={`/saal/${seanss.saal.id}`} key={seanss.id} className="seanss-link">
           <div className="seanss">
@@ -37,4 +37,4 @@ function Seanssid() {
   );
 }
 
-export default Seanssid;
+export default Seansid;

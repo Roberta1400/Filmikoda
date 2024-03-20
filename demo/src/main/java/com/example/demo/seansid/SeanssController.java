@@ -1,7 +1,5 @@
-package com.example.demo.seanssid;
+package com.example.demo.seansid;
 
-import com.example.demo.istekohad.Istekohad;
-import com.example.demo.istekohad.IstekohadService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 

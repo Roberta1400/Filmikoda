@@ -1,4 +1,4 @@
-package com.example.demo.seanssid;
+package com.example.demo.seansid;
 
 import org.springframework.stereotype.Service;
 

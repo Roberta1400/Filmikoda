@@ -1,10 +1,9 @@
-package com.example.demo.seanssid;
+package com.example.demo.seansid;
 
 import com.example.demo.filmid.Film;
 import com.example.demo.filmid.FilmRepository;
 import com.example.demo.saalid.Saal;
 import com.example.demo.saalid.SaalRepository;
-import com.example.demo.saalid.SaalService;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

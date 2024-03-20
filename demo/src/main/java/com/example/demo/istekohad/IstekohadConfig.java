@@ -21,22 +21,26 @@ public class IstekohadConfig {
 
     @Bean
     @Order(5)
-    CommandLineRunner istekohadCommandLineRunner(IstekohadRepository repository, SaalRepository saalRepository){
+    CommandLineRunner istekohadCommandLineRunner(IstekohadRepository repository, SaalRepository saalRepository) {
         return args -> {
             Saal kosmos = saalRepository.findById(1L).orElseThrow(() -> new RuntimeException("Saal 'Kosmos' ei leitud"));
             Saal imax = saalRepository.findById(2L).orElseThrow(() -> new RuntimeException("Saal 'IMAX' ei leitud"));
 
-            Istekohad üks = new Istekohad(1L,1,1,false, kosmos);
-            Istekohad kaks = new Istekohad(2L,2,1,false, kosmos);
-            Istekohad kolm = new Istekohad(3L,3,1,false, kosmos);
-            Istekohad neli = new Istekohad(4L,4,1,false, kosmos);
-            Istekohad viis= new Istekohad(5L,5,1,true, kosmos);
-            Istekohad kuus = new Istekohad(6L,6,2,false, kosmos);
-            Istekohad seitse = new Istekohad(7L,7,2,true, kosmos);
-            Istekohad kaheksa = new Istekohad(8L,8,2,false, imax);
-            Istekohad üheksa = new Istekohad(9L,9,2,false, imax);
-            Istekohad kümme = new Istekohad(10L,10,2,false, imax);
-            repository.saveAll(List.of(üks, kaks, kolm, neli, viis, kuus, seitse, kaheksa, üheksa, kümme));
+            for (int reaNr = 1; reaNr <= 4; reaNr++) {
+                for (int kohaId = 1; kohaId <= 8; kohaId++) {
+                    boolean kasVõetud = false;
+                    Istekohad istekoht = new Istekohad(null, kohaId, reaNr, kasVõetud, kosmos);
+                    repository.save(istekoht);
+                }
+            }
+
+            for (int reaNr = 1; reaNr <= 4; reaNr++) {
+                for (int kohaId = 9; kohaId <= 16; kohaId++) {
+                    boolean kasVõetud = false;
+                    Istekohad istekoht = new Istekohad(null, kohaId, reaNr, kasVõetud, imax);
+                    repository.save(istekoht);
+                }
+            }
         };
     }
 }

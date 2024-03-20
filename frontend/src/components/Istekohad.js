@@ -15,14 +15,32 @@ function Istekohad({ saalId }) {
             });
     }, [saalId]);
 
+    const groupIstekohadByReaNr = () => {
+        const groupedIstekohad = {};
+        istekohad.forEach(istekoht => {
+            const { reaNr } = istekoht;
+            if (!groupedIstekohad[reaNr]) {
+                groupedIstekohad[reaNr] = [];
+            }
+            groupedIstekohad[reaNr].push(istekoht);
+        });
+        return groupedIstekohad;
+    };
+
+    const groupedIstekohad = groupIstekohadByReaNr();
+
     return (
         <div className="istekohad-container">
-            {istekohad.map(istekoht => (
-                <div
-                    key={istekoht.id}
-                    className={`istekoht ${istekoht.kasVõetud ? 'võetud' : 'vaba'}`}
-                >
-                    {istekoht.kohaId}
+            {Object.keys(groupedIstekohad).map(reaNr => (
+                <div key={reaNr} className="istekohad-rea-container">
+                    {groupedIstekohad[reaNr].map(istekoht => (
+                        <div
+                            key={istekoht.id}
+                            className={`istekoht ${istekoht.kasVõetud ? 'võetud' : 'vaba'}`}
+                        >
+                            {istekoht.kohaId}
+                        </div>
+                    ))}
                 </div>
             ))}
         </div>
