@@ -41,4 +41,10 @@
     display: flex;
     justify-content: flex-start;
     justify-content: center;
+    gap: 5px;
+}
+
+.istekoht.valitud {
+    background-color: white; 
+    color: green; 
 }

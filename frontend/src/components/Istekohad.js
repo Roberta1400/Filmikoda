@@ -29,6 +29,16 @@ function Istekohad({ saalId }) {
 
     const groupedIstekohad = groupIstekohadByReaNr();
 
+    const handleClick = (valitudIstekoht) => {
+        const updatedIstekohad = istekohad.map(istekoht => {
+            if (istekoht.id === valitudIstekoht.id) {
+                return { ...istekoht, selected: !istekoht.selected };
+            }
+            return istekoht;
+        });
+        setIstekohad(updatedIstekohad);
+    };
+
     return (
         <div className="istekohad-container">
             {Object.keys(groupedIstekohad).map(reaNr => (
@@ -36,7 +46,8 @@ function Istekohad({ saalId }) {
                     {groupedIstekohad[reaNr].map(istekoht => (
                         <div
                             key={istekoht.id}
-                            className={`istekoht ${istekoht.kasVõetud ? 'võetud' : 'vaba'}`}
+                            className={`istekoht ${istekoht.kasVõetud ? 'võetud' : 'vaba'} ${istekoht.selected ? 'valitud' : ''}`}
+                            onClick={() => handleClick(istekoht)}
                         >
                             {istekoht.kohaId}
                         </div>
