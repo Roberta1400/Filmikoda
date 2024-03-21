@@ -5,7 +5,10 @@
 }
 
 .filter-container {
+  margin-top: 10px;
   margin-bottom: 20px; 
+  display: flex;
+  gap: 10px; 
 }
 
 .filter-container select {
@@ -28,4 +31,22 @@
 
 .film:hover {
   background-color: rgba(132, 0, 50, 0.6); 
+}
+
+
+select {
+  padding: 8px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  background-color: white;
+  color: #333;
+  gap: 10px;
+}
+
+
+select:focus {
+  outline: none;
+  border-color: rgba(229, 149, 0);;
+  box-shadow: 0 0 5px rgba(229, 149, 0, 0.6);
 }

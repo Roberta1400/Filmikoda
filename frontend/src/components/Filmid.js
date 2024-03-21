@@ -47,28 +47,37 @@ function Filmid() {
   return (
   <div className="container">
     <div className="filter-container">
-      <select value={selectedFilters.žanr} onChange={handleŽanrChange}>
-        <option value="">All</option>
-        <option value="scifi">SciFi</option>
-        <option value="animatsioon">Animatsioon</option>
-        <option value="drama">Draama</option>
-        <option value="romcom">Romantiline komöödia</option>
-        <option value="horror">Horror</option>
-      </select>
-      <select value={selectedFilters.vanusepiirang} onChange={handleVanusepiirangChange}>
-        <option value="">All</option>
-        <option value="12">12</option>
-        <option value="14">14</option>
-        <option value="16">16</option>
-        <option value="18">18</option>
-        <option value="0">Puudub</option>
-      </select>
-      <select value={selectedFilters.keel} onChange={handleKeelChange}>
-        <option value="">All</option>
-        <option value="eesti">Eesti keel</option>
-        <option value="inglise">Inglise keel</option>
-        <option value="vene">Vene keel</option>
-      </select>
+      <div>
+        <label htmlFor="žanr"><b>Žanr:</b></label>
+        <select id="žanr" value={selectedFilters.žanr} onChange={handleŽanrChange}>
+          <option value="">All</option>
+          <option value="scifi">SciFi</option>
+          <option value="animatsioon">Animatsioon</option>
+          <option value="drama">Draama</option>
+          <option value="romcom">Romantiline komöödia</option>
+          <option value="horror">Horror</option>
+        </select>
+      </div>
+      <div>
+        <label htmlFor="vanusepiirang"><b>Vanusepiirang:</b></label>
+        <select id="vanusepiirang" value={selectedFilters.vanusepiirang} onChange={handleVanusepiirangChange}>
+          <option value="">All</option>
+          <option value="12">12</option>
+          <option value="14">14</option>
+          <option value="16">16</option>
+          <option value="18">18</option>
+          <option value="0">Puudub</option>
+        </select>
+      </div>
+      <div>
+        <label htmlFor="keel"><b>Keel:</b></label>
+        <select id="keel" value={selectedFilters.keel} onChange={handleKeelChange}>
+          <option value="">All</option>
+          <option value="eesti">Eesti keel</option>
+          <option value="inglise">Inglise keel</option>
+          <option value="vene">Vene keel</option>
+        </select>
+      </div>
     </div>
     <div className="film-list">
       {films.map(film => (
