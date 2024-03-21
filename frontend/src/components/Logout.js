@@ -1,4 +1,5 @@
 import React from 'react';
+import './Logout.css';
 
 const Logout = ({ setUser }) => {
   const handleLogout = () => {
@@ -8,7 +9,7 @@ const Logout = ({ setUser }) => {
   return (
     <div>
       <h2>Logi välja</h2>
-      <button onClick={handleLogout}>Logi välja</button>
+      <button class="logout-button" onClick={handleLogout}>Logout</button>
     </div>
   );
 };
