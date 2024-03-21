@@ -30,4 +30,11 @@ public class IstekohadService {
     public List<Istekohad> getIstekohadBySaalID(Long saalId) {
         return istekohadRepository.getIstekohadBySaalID(saalId);
     }
+
+    public void ostaPiletid(List<Istekohad> valitudIstekohad) {
+        for (Istekohad istekoht : valitudIstekohad) {
+            istekoht.setKasVõetud(true);
+            istekohadRepository.save(istekoht);
+        }
+    }
 }

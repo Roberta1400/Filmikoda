@@ -34,4 +34,9 @@ public class IstekohadController {
     public List<Istekohad> getIstekohadbySaalID(@PathVariable Long saalId) {
         return istekohadService.getIstekohadBySaalID(saalId);
     }
+
+    @PostMapping("/ostapiletid")
+    public void ostaPiletid(@RequestBody List<Istekohad> valitudIstekohad) {
+        istekohadService.ostaPiletid(valitudIstekohad);
+    }
 }

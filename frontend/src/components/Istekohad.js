@@ -5,6 +5,7 @@ function Istekohad({ saalId }) {
     const [istekohad, setIstekohad] = useState([]);
     const [valitudIstekohad, setValitudIstekohad] = useState([]);
     const [liigaPaljuPileteidValitud, setLiigaPaljuPileteidValitud] = useState(false);
+    const [naitatsekki, setNaitaTsekki] = useState(false);
 
     useEffect(() => {
         fetch(`http://localhost:8080/api/v1/istekohad/${saalId}`)
@@ -110,9 +111,9 @@ function Istekohad({ saalId }) {
                 return {...istekoht, kasVõetud: true};
             } else {
                 return istekoht;
+
             }
         });
-    
         setIstekohad(updatedIstekohad);
        
     };
@@ -125,6 +126,38 @@ function Istekohad({ saalId }) {
 
     const removeAllSeats = () => {
         setValitudIstekohad([]);
+    };
+
+    const handleOstaPiletid = () => {
+        const hind = valitudIstekohad.length * 5;
+        console.log(`Tšekk: Kokkuhind - ${hind} eurot`);
+       
+        const requestBody = JSON.stringify( valitudIstekohad );
+    
+        const requestOptions = {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: requestBody,
+        };
+    
+        console.log(requestOptions);
+        fetch('http://localhost:8080/api/v1/istekohad/ostapiletid', requestOptions)
+            .then(response => {
+                if (response.ok) {
+                    console.log('Piletid ostetud edukalt!');
+                } else {
+                    console.error('Viga piletite ostmisel:', response.statusText);
+                }
+            })
+            .catch(error => {
+                console.error('Viga piletite ostmisel:', error);
+            });
+    };
+
+    const handleNaitaTsekki = () => {
+        setNaitaTsekki(true);
     };
     
     return (
@@ -148,19 +181,27 @@ function Istekohad({ saalId }) {
                 <button className="button" onClick={() => handleAddSeats(2, valitudIstekohad, istekohad)}>+2</button>
                 <button className="button" onClick={() => handleAddSeats(3, valitudIstekohad, istekohad)}>+3</button>
                 <button className="button" onClick={() => handleAddSeats(4, valitudIstekohad, istekohad)}>+4</button>
-                <button className="button" onClick={() => removeAllSeats()}> Del</button>
+                <button className="button" onClick={() => removeAllSeats()}>Del</button>
             </div>
             {liigaPaljuPileteidValitud && <p><b>Liiga palju pileteid valitud!</b></p>}
-            <div className="valitud-istekohad">
-                {valitudIstekohad.length > 0 && (
+            {valitudIstekohad.length > 0 && (
+                <div className="valitud-istekohad">
                     <p>Valitud istekohtade arv: {valitudIstekohad.length}</p>
-                )}
-                {valitudIstekohad.map((istekoht, indeks) => (
-                    <div key={indeks} className="valitud-istekoht" onClick={() => handleRemoveSeat(indeks)}>
-                     
-                    </div>
-                ))}
-            </div>
+                    {valitudIstekohad.map((istekoht, indeks) => (
+                        <div key={indeks} className="valitud-istekoht" onClick={() => handleRemoveSeat(indeks)}>
+                         
+                        </div>
+                    ))}
+                <button className="buttonS" onClick={handleNaitaTsekki}>Tšekk</button>
+                </div>
+            )}
+            {naitatsekki && (
+                <div className="receipt">
+                    <h2>Tšekk</h2>
+                    <p>Kokkuhind: {valitudIstekohad.length * 5} eurot</p>
+                    <button className="buttonS" onClick={() => handleOstaPiletid()}>Kinnita ost</button>
+                </div>
+            )}
         </div>
     );
 }

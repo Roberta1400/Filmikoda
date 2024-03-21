@@ -72,3 +72,21 @@
 .istekohad-toolbar{
     margin-top: 60px;
 }
+
+
+.buttonS {
+    border-radius: 50%; 
+    width: 60px; 
+    height: 60px; 
+    margin: 5px; 
+    background-color: #840032;
+    border: none; 
+    color: white; 
+    font-size: 16px; 
+    transition: background-color 0.3s; 
+}
+
+.buttonS:hover {
+    background-color: green; 
+    color: white;
+}
