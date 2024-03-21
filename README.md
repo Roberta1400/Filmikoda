@@ -21,25 +21,25 @@ Filmikoda veebirakendus pakub kasutajatele võimalust avastada laia valikut film
   - Maven
 
 ### 2. Paigaldamine ja käivitamine:
-  2.1. Laadige alla või kloonige backendi repositoorium oma arvutisse. (package demo)
-  2.2. Avage IntelliJ ning jooksutage DemoApplication (src/main/java/com/example/demo/DemoApplication.java)
+  - Laadige alla või kloonige backendi repositoorium oma arvutisse. (package demo)
+  - Avage IntelliJ ning jooksutage DemoApplication (src/main/java/com/example/demo/DemoApplication.java)
 
 ## Frontendi käivitamine
 
 ### 1. Nõuded
-   -Node.js
-   -npm
-   *Mõlemat saab laadida alla nodejs.org. lehelt
+   - Node.js
+   - npm
+   * Mõlemat saab laadida alla nodejs.org. lehelt
 
 ### 2. Käivitamine
 
-Liigu frontend kausta
+- Liigu frontend kausta
 `cd frontend`
 
-Laadi alla paketid
+- Laadi alla paketid
 `npm install`
 
-Käivitage rakendus
+- Käivitage rakendus
 `npm start`
 
 ## Autor
