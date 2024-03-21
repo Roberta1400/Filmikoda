@@ -2,13 +2,14 @@ import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import './Filmid.css';
 
-function Filmid() {
+function Filmid({user}) {
   const [films, setFilms] = useState([]);
   const [selectedFilters, setSelectedFilters] = useState({
     žanr: '',
     vanusepiirang: '',
     keel: ''
   });
+  const [vaadatudFilmid, setVaadatudFilmid] = useState([]);
 
   const handleŽanrChange = (event) => {
     setSelectedFilters({ ...selectedFilters, žanr: event.target.value });
@@ -23,6 +24,15 @@ function Filmid() {
   };
 
   useEffect(() => {
+    fetch(`http://localhost:8080/api/v1/kasutaja/${user.id}/vaadatudfilmid`)
+    .then(response => response.json())
+    .then(data => {
+      setVaadatudFilmid(data);
+    })
+    .catch(error => {
+      console.error('Error fetching watched films:', error);
+    });
+
     let apiURL = 'http://localhost:8080/api/v1/filmid';
 
     const parameters = Object.entries(selectedFilters)
@@ -42,7 +52,7 @@ function Filmid() {
       .catch(error => {
         console.error('Error fetching films:', error);
       });
-  }, [selectedFilters]);
+  }, [selectedFilters, user.id]);
 
   return (
   <div className="container">
@@ -79,6 +89,19 @@ function Filmid() {
         </select>
       </div>
     </div>
+    <div className="vaadatud-filmid">
+        <h2>Vaadatud filmid</h2>
+        <div className="film-list">
+          {vaadatudFilmid.map(film => (
+            <div key={film.id} className="film">
+              <Link to={`/movies/${film.id}`}>
+                <img src={film.pilt} alt="Filmipilt" />
+              </Link>
+              <h2>{film.pealkiri}</h2>
+            </div>
+          ))}
+        </div>
+      </div>
     <div className="film-list">
       {films.map(film => (
         <div key={film.id} className="film">

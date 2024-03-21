@@ -1,5 +1,5 @@
 .logout-button {
-    background-color: #e59500;
+    background-color: rgba(229, 149, 0, 0.6);
     width: 100px;
     height: 100px;
     color: #840032;
@@ -11,6 +11,6 @@
 }
 
 .logout-button:hover {
-    background-color: #840032;
+    background-color: rgba(132, 0, 50, 0.6);
     color: white;
 }

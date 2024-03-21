@@ -17,7 +17,7 @@ public class FilmConfig {
     }
 
     @Bean
-    @Order(2)
+    @Order(1)
     CommandLineRunner filmCommandLineRunner(FilmRepository repository){
         return args -> {
             Film lotte = new Film(1L,"Lotte", "animatsioon", "0", "eesti", "");

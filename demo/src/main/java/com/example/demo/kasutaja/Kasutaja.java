@@ -1,7 +1,10 @@
 package com.example.demo.kasutaja;
 
 
+import com.example.demo.filmid.Film;
 import jakarta.persistence.*;
+
+import java.util.List;
 
 @Entity
 @Table
@@ -22,20 +25,25 @@ public class Kasutaja {
     private String email;
     private String parool;
 
+    @ManyToMany
+    private List<Film> vaadatudFilmid;
+
     public Kasutaja() {
     }
 
-    public Kasutaja(Long id, String kasutajanimi, String email, String parool) {
+    public Kasutaja(Long id, String kasutajanimi, String email, String parool, List<Film> vaadatudFilmid) {
         this.id = id;
         this.kasutajanimi = kasutajanimi;
         this.email = email;
         this.parool = parool;
+        this.vaadatudFilmid = vaadatudFilmid;
     }
 
-    public Kasutaja(String kasutajanimi, String email, String parool) {
+    public Kasutaja(String kasutajanimi, String email, String parool, List<Film> vaadatudFilmid) {
         this.kasutajanimi = kasutajanimi;
         this.email = email;
         this.parool = parool;
+        this.vaadatudFilmid = vaadatudFilmid;
     }
 
     public Long getId() {
@@ -78,5 +86,13 @@ public class Kasutaja {
                 ", parool='" + parool + '\'' +
                 ", email='" + email + '\'' +
                 '}';
+    }
+
+    public List<Film> getVaadatudFilmid() {
+        return vaadatudFilmid;
+    }
+
+    public void setVaadatudFilmid(List<Film> vaadatudFilmid) {
+        this.vaadatudFilmid = vaadatudFilmid;
     }
 }

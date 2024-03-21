@@ -1,5 +1,6 @@
 package com.example.demo.kasutaja;
 
+import com.example.demo.filmid.Film;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -35,5 +36,14 @@ public class KasutajaService {
             throw new IllegalStateException("Kasutaja ID "+kasutajaId+" ei eksisteeri");
         }
         kasutajaRepository.deleteById(kasutajaId);
+    }
+
+    public List<Film> getKasutajaVaadatudFilmid(Long kasutajaId) {
+        Kasutaja kasutaja = kasutajaRepository.findById(kasutajaId).orElse(null);
+        if (kasutaja != null) {
+            return kasutaja.getVaadatudFilmid();
+        } else {
+            return null;
+        }
     }
 }

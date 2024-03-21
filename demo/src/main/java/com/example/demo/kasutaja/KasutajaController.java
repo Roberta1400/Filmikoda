@@ -1,5 +1,6 @@
 package com.example.demo.kasutaja;
 
+import com.example.demo.filmid.Film;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -30,6 +31,11 @@ public class KasutajaController {
     @DeleteMapping(path = "{kasutajaId}")
     public void deleteKasutaja(@PathVariable("kasutajaId") Long kasutajaId){
         kasutajaService.deleteKasutaja(kasutajaId);
+    }
+
+    @GetMapping("/{kasutajaId}/vaadatudfilmid")
+    public List<Film> getKasutajaVaadatudFilmid(@PathVariable Long kasutajaId) {
+        return kasutajaService.getKasutajaVaadatudFilmid(kasutajaId);
     }
 
 }

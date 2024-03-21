@@ -24,7 +24,7 @@ function App() {
           <>
             <Navigationbar user={user} />
             <Routes>
-              <Route path="/" element={<Filmid />} />
+              <Route path="/" element={<Filmid user={user}/>} />
               <Route path="/seansid" element={<Seansid />} />
               <Route path="/saal/:saalId" element={<Saal />} />
               <Route path="/logout" element={<Logout setUser={setUser} />} />
