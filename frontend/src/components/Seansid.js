@@ -20,7 +20,7 @@ function Seansid() {
 
   return (
     <div className="container">
-      <h1>Seanssid</h1>
+      <h1>Seansid</h1>
       <div className="seansid-list">
         {seanssid.map(seanss => (
           <Link to={`/saal/${seanss.saal.id}`} key={seanss.id} className="seanss-link">

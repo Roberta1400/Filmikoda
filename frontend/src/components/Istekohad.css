@@ -2,13 +2,13 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: center; 
-    gap: 5px;
+    gap: 10px;
     margin-top: 30px;
 }
 
 .istekoht {
-    width: 20px;
-    height: 20px;
+    width: 30px;
+    height: 30px;
     border-radius: 50%;
     display: flex;
     justify-content: center;
@@ -20,6 +20,7 @@
 .võetud {
     background-color: #002642;
     cursor: not-allowed;
+    color: #002642;
 }
 
 .vaba {
@@ -28,6 +29,7 @@
 
 .istekoht:hover {
     background-color: #840032;
+    color: white;
 }
 
 .istekohad-container {
@@ -42,10 +44,31 @@
     display: flex;
     justify-content: flex-start;
     justify-content: center;
-    gap: 5px;
+    gap: 8px;
 }
 
 .istekoht.valitud {
     background-color: white; 
     color: green; 
+}
+
+.button {
+    border-radius: 50%; 
+    width: 40px; 
+    height: 40px; 
+    margin: 5px; 
+    background-color: #e59500;
+    border: none; 
+    color: #840032; 
+    font-size: 16px; 
+    transition: background-color 0.3s; 
+}
+
+.button:hover {
+    background-color: #840032; 
+    color: white;
+}
+
+.istekohad-toolbar{
+    margin-top: 60px;
 }
