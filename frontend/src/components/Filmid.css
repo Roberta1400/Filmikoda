@@ -58,3 +58,8 @@ select:focus {
 .soovita:hover {
   color: rgba(229, 149, 0, 0.6); 
 }
+
+.film img {
+  width: 100px;
+  height: auto; 
+}
