@@ -1,12 +1,10 @@
 package com.example.demo.filmid;
 
-import com.example.demo.filmid.FilmService;
-import com.example.demo.kasutaja.Kasutaja;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Optional;
 
 @RestController
 @RequestMapping(path = "api/v1/filmid")
@@ -41,5 +39,10 @@ public class FilmController {
     @DeleteMapping(path = "{filmId}")
     public void deleteKasutaja(@PathVariable("filmId") Long filmId){
         filmService.deleteFilm(filmId);
+    }
+
+    @GetMapping("/{filmiId}")
+    public Optional<Film> getFilmbyID(@PathVariable Long filmiId) {
+        return filmService.getFilmByID(filmiId);
     }
 }

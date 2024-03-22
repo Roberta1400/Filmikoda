@@ -26,6 +26,7 @@ function Seansid() {
           <Link to={`/saal/${seanss.saal.id}`} key={seanss.id} className="seanss-link">
           <div className="seanss">
             <h2>{seanss.film.pealkiri}</h2>
+            <img src={seanss.film.pilt} alt="Filmipilt" />
             <p>Kuupäev: {format(new Date(seanss.algusaeg), 'dd/MM')}</p>
             <p>Algusaeg: {format(new Date(seanss.algusaeg), 'HH:hh')}</p>
             <p>Saal: {seanss.saal.nimi}</p>

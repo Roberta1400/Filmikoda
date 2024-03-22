@@ -6,6 +6,7 @@ import Seansid from './components/Seansid';
 import Saal from './components/Saal';
 import Login from './components/Login';
 import Logout from './components/Logout';
+import FilmDetailid from './components/FilmiDetailid';
 import { useState } from 'react';
 
 function App() {
@@ -28,6 +29,7 @@ function App() {
               <Route path="/seansid" element={<Seansid />} />
               <Route path="/saal/:saalId" element={<Saal />} />
               <Route path="/logout" element={<Logout setUser={setUser} />} />
+              <Route path="/:filmiId" element={<FilmDetailid />} />
             </Routes>
           </>
         )}

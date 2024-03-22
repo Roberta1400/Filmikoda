@@ -128,7 +128,7 @@ function Filmid({user}) {
     <div className="film-list">
       {films.map(film => (
         <div key={film.id} className="film">
-          <Link to={`/movies/${film.id}`}>
+          <Link to={`/${film.id}`}>
             <img src={film.pilt} alt="Filmipilt" />
           </Link>
           <h2>{film.pealkiri}</h2>
@@ -139,7 +139,7 @@ function Filmid({user}) {
     <div className="film-list">
       {soovitatudFilmid.map(film => (
         <div key={film.id} className="film">
-          <Link to={`/movies/${film.id}`}>
+          <Link to={`/${film.id}`}>
             <img src={film.pilt} alt="Filmipilt" />
           </Link>
           <h2>{film.pealkiri}</h2>

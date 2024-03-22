@@ -21,27 +21,29 @@ public class Film {
     private String žanr;
     private String vanusepiirang;
     private String keel;
-
     private String pilt;
 
+    private String sisu;
     public Film() {
     }
 
-    public Film(Long id, String pealkiri, String žanr, String vanusepiirang, String keel, String pilt) {
+    public Film(Long id, String pealkiri, String žanr, String vanusepiirang, String keel, String pilt, String sisu) {
         this.id = id;
         this.pealkiri = pealkiri;
         this.žanr = žanr;
         this.vanusepiirang = vanusepiirang;
         this.keel = keel;
         this.pilt = pilt;
+        this.sisu = sisu;
     }
 
-    public Film(String pealkiri, String žanr, String vanusepiirang, String keel, String pilt) {
+    public Film(String pealkiri, String žanr, String vanusepiirang, String keel, String pilt, String sisu) {
         this.pealkiri = pealkiri;
         this.žanr = žanr;
         this.vanusepiirang = vanusepiirang;
         this.keel = keel;
         this.pilt = pilt;
+        this.sisu = sisu;
     }
 
     public Long getId() {
@@ -101,5 +103,13 @@ public class Film {
 
     public void setPilt(String pilt) {
         this.pilt = pilt;
+    }
+
+    public String getSisu() {
+        return sisu;
+    }
+
+    public void setSisu(String sisu) {
+        this.sisu = sisu;
     }
 }

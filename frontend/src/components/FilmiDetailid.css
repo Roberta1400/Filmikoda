@@ -1,0 +1,27 @@
+.film-detailid {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  
+  .film-detailid h1 {
+    margin-bottom: 20px;
+  }
+  
+  .film-detailid img {
+    width: 200px;
+  }
+  
+  .film-detailid .zanr-sisu {
+    margin-top: 20px; 
+  }
+
+  .nupp {
+    color: #840032; 
+    cursor: pointer;
+}
+
+.nupp:hover {
+    color: rgba(229, 149, 0, 0.6);
+}

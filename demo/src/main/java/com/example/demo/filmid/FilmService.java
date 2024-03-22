@@ -37,4 +37,12 @@ public class FilmService {
     public List<Film> findByVanusepiirangAndŽanrAndKeel(String vanusepiirang, String žanr, String keel) {
         return filmRepository.findByVanusepiirangAndŽanrAndKeel(vanusepiirang, žanr, keel);
     }
+
+    public Optional<Film> getFilmByID(Long filmiID) {
+        Optional<Film> film = filmRepository.findFilmById(filmiID);
+        if(!film.isPresent()){
+            throw new IllegalStateException("Ei eksisteeri");
+        }
+        return film;
+    }
 }

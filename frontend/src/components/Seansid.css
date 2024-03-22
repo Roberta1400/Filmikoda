@@ -28,3 +28,8 @@
     color: inherit;
     cursor: pointer; 
   }
+
+  .seanss img {
+    width: 110px;
+    height: 200px; 
+  }
