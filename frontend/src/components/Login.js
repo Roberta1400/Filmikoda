@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import './Login.css'; // Impordi oma CSS-fail
+import './Login.css';
 
 const Login = ({ setUser }) => {
     const [email, setEmail] = useState('');
@@ -21,11 +21,22 @@ const Login = ({ setUser }) => {
                     setError('Sellist kontot ei eksisteeri');
                 }
             } else {
-                console.log('Registreerimine');
+                const requestOptions = {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ kasutajanimi: email.split('@')[0], email: email, parool: parool })
+                };
+                const response = await fetch('http://localhost:8080/api/v1/kasutaja', requestOptions);
+                if (response.ok) {
+                    setError('Kasutaja loodud, palun logige sisse.');
+                    setIsLoginMode(true);
+                } else {
+                    setError('Kasutaja loomisel ilmnes viga.');
+                }
             }
         } catch (error) {
-            console.error('Viga sisselogimisel:', error);
-            setError('Viga sisselogimisel');
+            console.error('Viga sisselogimisel/registeerimisel:', error);
+            setError('Viga sisselogimisel/registeerimisel');
         }
     };
 
@@ -56,12 +67,12 @@ const Login = ({ setUser }) => {
                     <button type="submit">{isLoginMode ? 'Logi sisse' : 'Registreeri'}</button>
                 </div>
             </form>
-                {isLoginMode ? "Pole veel kasutaja?" : "On juba kasutaja?"}{' '}
-                <div className="button-container">
+            {isLoginMode ? "Pole veel kasutaja?" : "On juba kasutaja?"}{' '}
+            <div className="button-container">
                 <button onClick={() => setIsLoginMode(!isLoginMode)}>
                     {isLoginMode ? 'Registreeri' : 'Logi sisse'}
                 </button>
-                </div>
+            </div>
         </div>
     );
 };

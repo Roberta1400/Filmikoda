@@ -38,4 +38,9 @@ public class KasutajaController {
         return kasutajaService.getKasutajaVaadatudFilmid(kasutajaId);
     }
 
+    @PutMapping("/{kasutajaId}/vaadatudfilmid")
+    public void updateKasutajaVaadatudFilmid(@PathVariable Long kasutajaId, @RequestBody List<Film> vaadatudFilmid) {
+        kasutajaService.updateKasutajaVaadatudFilmid(kasutajaId, vaadatudFilmid);
+    }
+
 }

@@ -46,4 +46,11 @@ public class KasutajaService {
             return null;
         }
     }
+
+    public void updateKasutajaVaadatudFilmid(Long kasutajaId, List<Film> vaadatudFilmid) {
+        Kasutaja kasutaja = kasutajaRepository.findById(kasutajaId)
+                .orElseThrow(() -> new RuntimeException("Kasutajat ID-ga " + kasutajaId + " ei leitud"));
+        kasutaja.setVaadatudFilmid(vaadatudFilmid);
+        kasutajaRepository.save(kasutaja);
+    }
 }
