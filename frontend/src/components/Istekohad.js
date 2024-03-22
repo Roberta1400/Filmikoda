@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import './Istekohad.css';
 
 function Istekohad({ saalId }) {
@@ -199,7 +200,9 @@ function Istekohad({ saalId }) {
                 <div className="receipt">
                     <h2>Tšekk</h2>
                     <p>Kokkuhind: {valitudIstekohad.length * 5} eurot</p>
+                    <Link to={`/seansid`} >
                     <button className="buttonS" onClick={() => handleOstaPiletid()}>Kinnita ost</button>
+                    </Link>
                 </div>
             )}
         </div>

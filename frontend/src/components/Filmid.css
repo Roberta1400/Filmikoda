@@ -47,6 +47,14 @@ select {
 
 select:focus {
   outline: none;
-  border-color: rgba(229, 149, 0);;
+  border-color: rgba(229, 149, 0);
   box-shadow: 0 0 5px rgba(229, 149, 0, 0.6);
+}
+
+.soovita {
+  cursor: pointer;
+}
+
+.soovita:hover {
+  color: rgba(229, 149, 0, 0.6); 
 }

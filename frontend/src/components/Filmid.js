@@ -10,6 +10,7 @@ function Filmid({user}) {
     keel: ''
   });
   const [vaadatudFilmid, setVaadatudFilmid] = useState([]);
+  const [soovitatudFilmid, setSoovitatudFilmid] = useState([]);
 
   const handleŽanrChange = (event) => {
     setSelectedFilters({ ...selectedFilters, žanr: event.target.value });
@@ -54,6 +55,40 @@ function Filmid({user}) {
       });
   }, [selectedFilters, user.id]);
 
+  const soovitaFilme = (vaadatudFilmid) => {
+    const zanriteKaart = new Map();
+
+    vaadatudFilmid.forEach(film => {
+      const zanr = film.žanr;
+      console.log(zanr);
+      zanriteKaart.set(zanr, (zanriteKaart.get(zanr) || 0) + 1);
+    });
+    
+    let maxEsinemisteArv = 0;
+    zanriteKaart.forEach(esinemisteArv => {
+      if (esinemisteArv > maxEsinemisteArv) {
+        maxEsinemisteArv = esinemisteArv;
+      }
+    });
+
+    const populaarsedZanrid = [];
+    zanriteKaart.forEach((esinemisteArv, zanr) => {
+      if (esinemisteArv === maxEsinemisteArv) {
+        populaarsedZanrid.push(zanr);
+      }
+    });
+
+    const vaatamataFilmid = films.filter(film => !vaadatudFilmid.some(vaadatudFilm => vaadatudFilm.id === film.id));
+
+    console.log(vaatamataFilmid);
+
+    const soovitatudFilmid = vaatamataFilmid.filter(film => populaarsedZanrid.includes(film.žanr));
+
+    console.log(soovitatudFilmid);
+ 
+    setSoovitatudFilmid(soovitatudFilmid);
+};
+
   return (
   <div className="container">
     <div className="filter-container">
@@ -89,21 +124,20 @@ function Filmid({user}) {
         </select>
       </div>
     </div>
-    <div className="vaadatud-filmid">
-        <h2>Vaadatud filmid</h2>
-        <div className="film-list">
-          {vaadatudFilmid.map(film => (
-            <div key={film.id} className="film">
-              <Link to={`/movies/${film.id}`}>
-                <img src={film.pilt} alt="Filmipilt" />
-              </Link>
-              <h2>{film.pealkiri}</h2>
-            </div>
-          ))}
-        </div>
-      </div>
+    <h2>Hetkel kinos</h2>
     <div className="film-list">
       {films.map(film => (
+        <div key={film.id} className="film">
+          <Link to={`/movies/${film.id}`}>
+            <img src={film.pilt} alt="Filmipilt" />
+          </Link>
+          <h2>{film.pealkiri}</h2>
+        </div>
+      ))}
+    </div>
+    <h2 onClick={() => soovitaFilme(vaadatudFilmid)} className="soovita">Sulle soovitatud</h2>
+    <div className="film-list">
+      {soovitatudFilmid.map(film => (
         <div key={film.id} className="film">
           <Link to={`/movies/${film.id}`}>
             <img src={film.pilt} alt="Filmipilt" />

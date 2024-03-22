@@ -19,7 +19,9 @@ public class KasutajaConfig {
             Film film1 = filmRepository.getReferenceById(1L);
             Film film2 = filmRepository.getReferenceById(3L);
             Film film3 = filmRepository.getReferenceById(6L);
-            List<Film> filmid = List.of(film1,film2,film3);
+            Film film4 = filmRepository.getReferenceById(8L);
+            Film film5 = filmRepository.getReferenceById(5L);
+            List<Film> filmid = List.of(film1,film2,film3, film4, film5);
             Kasutaja eva = new Kasutaja(1L, "eva", "ma.olen.eva@gmail.com", "kass123", filmid);
             Kasutaja aadam = new Kasutaja("aadam", "ma.olen.aadam@gmail.com", "kass1234", new ArrayList<>());
             repository.saveAll(List.of(eva, aadam));
