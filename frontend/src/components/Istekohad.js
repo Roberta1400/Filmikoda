@@ -107,25 +107,23 @@ function Istekohad({ saalId }) {
         }
     
         setValitudIstekohad(updatedValitudIstekohad);
-        const updatedIstekohad = istekohad.map(istekoht => {
-            if (updatedValitudIstekohad.some(selectedSeat => selectedSeat.id === istekoht.id)) {
-                return {...istekoht, kasVõetud: true};
-            } else {
-                return istekoht;
-
-            }
-        });
-        setIstekohad(updatedIstekohad);
        
     };
 
-    const handleRemoveSeat = (indeks) => {
-        const uuendatudIstekohad = [...valitudIstekohad];
-        uuendatudIstekohad.splice(indeks, 1);
-        setValitudIstekohad(uuendatudIstekohad);
+    const handleRemoveSeat = (istekohtId) => {
+        const updatedValitudIstekohad = valitudIstekohad.filter(istekoht => istekoht.id !== istekohtId);
+        setValitudIstekohad(updatedValitudIstekohad);
     };
 
     const removeAllSeats = () => {
+        const updatedIstekohad = istekohad.map(istekoht => {
+            if (valitudIstekohad.some(selectedSeat => selectedSeat.id === istekoht.id)) {
+                return {...istekoht, kasVõetud: false};
+            } else {
+                return istekoht;
+            }
+        });
+        setIstekohad(updatedIstekohad);
         setValitudIstekohad([]);
     };
 
