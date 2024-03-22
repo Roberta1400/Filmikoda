@@ -56,14 +56,12 @@ const Login = ({ setUser }) => {
                     <button type="submit">{isLoginMode ? 'Logi sisse' : 'Registreeri'}</button>
                 </div>
             </form>
-            <p>
                 {isLoginMode ? "Pole veel kasutaja?" : "On juba kasutaja?"}{' '}
                 <div className="button-container">
                 <button onClick={() => setIsLoginMode(!isLoginMode)}>
                     {isLoginMode ? 'Registreeri' : 'Logi sisse'}
                 </button>
                 </div>
-            </p>
         </div>
     );
 };

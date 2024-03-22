@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import './Istekohad.css';
 
-function Istekohad({ saalId, user }) {
+function Istekohad({ saalId }) {
     const [istekohad, setIstekohad] = useState([]);
     const [valitudIstekohad, setValitudIstekohad] = useState([]);
     const [liigaPaljuPileteidValitud, setLiigaPaljuPileteidValitud] = useState(false);
