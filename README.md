@@ -1,4 +1,4 @@
-# CGI Suvepraktika Ülesanne - Filmikoda
+# Filmikoda
 
 Filmikoda veebirakendus pakub kasutajatele võimalust avastada laia valikut filme, leida sobivaid seansse ning broneerida pileteid mugavalt. Kasutajad saavad valida erinevaid filtreid, et leida kiirelt ja lihtsalt just neile huvipakkuvaid filme. Lisaks piletite broneerimisel pakutakse kasutajale kõige paremaid vabu kohti kinosaalis, võimaldades neil nautida parimat vaadet ning kogemust filmi vaatamisel.
 
