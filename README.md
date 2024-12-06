@@ -1,48 +1,46 @@
 # Filmikoda
 
-Filmikoda veebirakendus pakub kasutajatele võimalust avastada laia valikut filme, leida sobivaid seansse ning broneerida pileteid mugavalt. Kasutajad saavad valida erinevaid filtreid, et leida kiirelt ja lihtsalt just neile huvipakkuvaid filme. Lisaks piletite broneerimisel pakutakse kasutajale kõige paremaid vabu kohti kinosaalis, võimaldades neil nautida parimat vaadet ning kogemust filmi vaatamisel.
+Filmikoda is a web application that allows users to explore a wide variety of movies, find suitable showtimes, and book tickets conveniently. Users can apply filters to quickly and easily find movies of interest. During ticket booking, the app suggests the best available seats in the cinema for an optimal viewing experience.
 
-# Kuidas käivitada projekti?
+---
 
-## Andmebaasi setup
+## Features
+- Browse a wide selection of movies.
+- Filter movies by genre, rating, and more.
+- Book tickets conveniently with a suggested best seat selection.
 
-1. Laadige alla PostgresSQL ja PgAdmin tööriist
-2. PostgreSQL installimise käigus määra üldkasutaja parool, port ja kasutajanimi.
+---
 
-## Backendi ühendus andmebaasiga
+## Getting Started
 
-1. Ava application.properties fail (src/main/resources/application.properties)
-2. Lisa oma username ja password vastavatesse ridadesse (spring.datasource.username=postgres ja spring.datasource.password=password)
+### Prerequisites
+To run this project, you will need:
+- **PostgreSQL** and **PgAdmin** (for the database setup)
+- **Java Development Kit (JDK)** version 21
+- **Maven** (for backend setup)
+- **Node.js** and **npm** (for frontend setup)
 
-## Backendi käivitamine 
+---
 
-### 1. Nõuded:
-  - Java Development Kit (JDK) - versioon 21
-  - Maven
+### Setup Instructions
 
-### 2. Paigaldamine ja käivitamine:
-  - Laadige alla või kloonige backendi repositoorium oma arvutisse. (package demo)
-  - Avage IntelliJ ning jooksutage DemoApplication (src/main/java/com/example/demo/DemoApplication.java)
+#### 1. Database Setup
+1. Download and install **PostgreSQL** and **PgAdmin**.
+2. During installation, set your username, password, and port for PostgreSQL.
+3. Update the backend configuration:
+   - Open the `application.properties` file located at `src/main/resources/application.properties`.
+   - Update the following lines with your PostgreSQL credentials:
+     ```properties
+     spring.datasource.username=postgres
+     spring.datasource.password=your_password
+     ```
 
-## Frontendi käivitamine
+#### 2. Backend Setup
+1. Clone or download the backend repository to your computer.
+2. Open the project in IntelliJ IDEA or any Java IDE of your choice.
+3. Navigate to `src/main/java/com/example/demo/DemoApplication.java` and run the `DemoApplication` class.
 
-### 1. Nõuded
-   - Node.js
-   - npm
-   * Mõlemat saab laadida alla nodejs.org. lehelt
-
-### 2. Käivitamine
-
-- Liigu frontend kausta
-`cd frontend`
-
-- Laadi alla paketid
-`npm install`
-
-- Käivitage rakendus
-`npm start`
-
-## Autor
-### Roberta Solom
-
-
+#### 3. Frontend Setup
+1. Navigate to the frontend directory:
+   ```bash
+   cd frontend
